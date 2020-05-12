@@ -1,7 +1,7 @@
-var ZBoltOctoScreen = {}
+var ConfiguratorOctoScreen = {}
 
 $(function () {
-    ZBoltOctoScreen.StateViewModel = function (parameters) {
+    ConfiguratorOctoScreen.StateViewModel = function (parameters) {
         var self = this;
 
         self.printerStateViewModel = parameters[0];
@@ -35,11 +35,11 @@ $(function () {
     }
 
     OCTOPRINT_VIEWMODELS.push({
-        construct: ZBoltOctoScreen.StateViewModel,
+        construct: ConfiguratorOctoScreen.StateViewModel,
         dependencies: ["printerStateViewModel"]
     });
 
-    ZBoltOctoScreen.ConnectionViewModel = function (parameters) {
+    ConfiguratorOctoScreen.ConnectionViewModel = function (parameters) {
         var self = this;
 
         self.onAfterBinding = function () {
@@ -49,10 +49,8 @@ $(function () {
     }
 
     OCTOPRINT_VIEWMODELS.push({
-        construct: ZBoltOctoScreen.ConnectionViewModel,
+        construct: ConfiguratorOctoScreen.ConnectionViewModel,
         dependencies: ["connectionViewModel"]
     });
 
 });
-
-

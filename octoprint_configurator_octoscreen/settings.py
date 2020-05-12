@@ -1,6 +1,6 @@
 import json
 
-zbolt_toolchanger_installed = True
+#zbolt_toolchanger_installed = True
 
 
 default_menu_structure = """[
@@ -111,4 +111,3 @@ class OctoScreenSettings(object):
     @staticmethod
     def template_vars():
         return dict(default_menu_structure=default_menu_structure)
-

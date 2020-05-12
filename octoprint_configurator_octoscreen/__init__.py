@@ -26,7 +26,7 @@ class OctoScreenPlugin(octoprint.plugin.SettingsPlugin,
     def get_assets(self):
         return dict(
             less=['less/theme.less'],
-            js=['js/zbolt.js'],
+            js=['js/octoscreen.js'],
             css=['css/main.css', 'css/theme.css']
         )
 
