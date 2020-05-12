@@ -7,11 +7,11 @@ import flask
 import socket
 
 from octoprint.events import Events
-from octoprint_zbolt_octoscreen.notifications import Notifications
-from octoprint_zbolt_octoscreen.settings import ZBoltOctoScreenSettings
+from octoprint_configurator_octoscreen.notifications import Notifications
+from octoprint_configurator_octoscreen.settings import OctoScreenSettings
 
 
-class ZBoltOctoScreenPlugin(octoprint.plugin.SettingsPlugin,
+class OctoScreenPlugin(octoprint.plugin.SettingsPlugin,
                     octoprint.plugin.EventHandlerPlugin,
                     octoprint.plugin.TemplatePlugin,
                     octoprint.plugin.AssetPlugin,
@@ -20,8 +20,8 @@ class ZBoltOctoScreenPlugin(octoprint.plugin.SettingsPlugin,
 
     def initialize(self):
         Notifications.initialize(self._plugin_manager)
-        self.Settings = ZBoltOctoScreenSettings(self._settings)
-        
+        self.Settings = OctoScreenSettings(self._settings)
+
 
     def get_assets(self):
         return dict(
@@ -31,10 +31,10 @@ class ZBoltOctoScreenPlugin(octoprint.plugin.SettingsPlugin,
         )
 
     def get_settings_defaults(self):
-         return ZBoltOctoScreenSettings.default_settings()
+         return OctoScreenSettings.default_settings()
 
     def get_template_vars(self):
-        return ZBoltOctoScreenSettings.template_vars()
+        return OctoScreenSettings.template_vars()
 
     def get_api_commands(self):
         return dict(
@@ -48,7 +48,7 @@ class ZBoltOctoScreenPlugin(octoprint.plugin.SettingsPlugin,
     def on_api_command(self, command, data):
         if command == "get_notification":
             return flask.jsonify(message = Notifications.get_message_to_display())
-        elif command == "get_settings": 
+        elif command == "get_settings":
             return flask.jsonify(self.Settings.get_all())
 
     def on_api_get(self, request):
@@ -57,7 +57,7 @@ class ZBoltOctoScreenPlugin(octoprint.plugin.SettingsPlugin,
 
     def get_template_configs(self):
         return [
-            dict(type="settings", name="Z-Bolt OctoScreen", custom_bindings=False),
+            dict(type="settings", name="Configurateur OctoScreen", custom_bindings=False),
         ]
 
 
@@ -65,24 +65,24 @@ class ZBoltOctoScreenPlugin(octoprint.plugin.SettingsPlugin,
     def get_update_information(self):
         return dict(
         zbolt_octoscreen=dict(
-            displayName = "Z-Bolt OctoScreen",
+            displayName = "Configurateur OctoScreen",
             displayVersion = self._plugin_version,
 
             type="github_release",
-            user="Z-Bolt",
-            repo="OctoPrint-Z-Bolt-OctoScreen",
+            user="CyrilleSouchet",
+            repo="OctoPrint-Configurateur-OctoScreen",
             current=self._plugin_version,
 
-            pip="https://github.com/Z-Bolt/OctoPrint-Z-Bolt-OctoScreen/archive/{target_version}.zip"
+            pip="https://github.com/CyrilleSouchet/OctoPrint-Configurateur-OctoScreen/archive/{target_version}.zip"
             )
         )
 
 
-__plugin_name__ = "Z-Bolt OctoScreen"
+__plugin_name__ = "Configurateur OctoScreen"
 
 def __plugin_load__():
-    global __plugin_implementation__    
-    __plugin_implementation__ = ZBoltOctoScreenPlugin()
+    global __plugin_implementation__
+    __plugin_implementation__ = OctoScreenPlugin()
 
     global __plugin_hooks__
     __plugin_hooks__ = {

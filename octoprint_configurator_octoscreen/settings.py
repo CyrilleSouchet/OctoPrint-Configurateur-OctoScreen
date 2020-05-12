@@ -5,7 +5,7 @@ zbolt_toolchanger_installed = True
 
 default_menu_structure = """[
     {
-        "name": "Home",
+        "name": "Origines",
         "icon": "home",
         "panel": "home"
     },
@@ -81,13 +81,14 @@ default_menu_structure = """[
 ]"""
 
 
-class ZBoltOctoScreenSettings(object):
+class OctoScreenSettings(object):
     def __init__(self, settings):
         self._settings = settings
         self.default_menu_structure = default_menu_structure
 
     def get_all(self):
         return {
+            "test": "réussi",
             "filament_in_length": float(self._settings.get(["filament_in_length"])),
             "filament_out_length": float(self._settings.get(["filament_out_length"])),
             "gcodes": self._settings.get(["gcodes"]),
