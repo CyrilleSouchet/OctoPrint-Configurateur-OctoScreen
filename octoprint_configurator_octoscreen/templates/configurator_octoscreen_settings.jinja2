@@ -1,9 +1,10 @@
 <form class="form-horizontal">
 
-    
+
     <ul class="nav nav-pills">
         <li class="active"><a href="#configurator_octoscreen_general" data-toggle="tab">{{ _('General') }}</a></li>
         <li><a href="#configurator_octoscreen_menu_structure" data-toggle="tab">{{ _('Menu Structure') }}</a></li>
+        <li><a href="#configurator_octoscreen_applications_menu" data-toggle="tab">{{ _('Menu d\'applications') }}</a></li>
     </ul>
 
 
@@ -72,6 +73,11 @@
                     <code style="white-space: pre-wrap; display: block;">{{ plugin_configurator_octoscreen_default_menu_structure | safe }}</code>
                 </div>
             </div>
+        </div>
+        <div id="configurator_octoscreen_applications_menu" class="tab-pane">
+          <fieldset>
+              <textarea rows="12" class="block" data-bind="value: settings.plugins.configurator_octoscreen.applications_menu"></textarea>
+          </fieldset>
         </div>
     </div>
 </form>

@@ -80,11 +80,25 @@ default_menu_structure = """[
     }
 ]"""
 
+default_applications_menu = """[
+    {
+        "name": "USB On",
+        "icon": "usb",
+        "gcode": "OCTO1"
+    },
+    {
+        "name": "USB Off",
+        "icon": "usb",
+        "gcode": "OCTO2"
+    }
+]"""
+
 
 class OctoScreenSettings(object):
     def __init__(self, settings):
         self._settings = settings
         self.default_menu_structure = default_menu_structure
+        self.default_applications_menu = default_applications_menu
 
     def get_all(self):
         return {
@@ -95,6 +109,7 @@ class OctoScreenSettings(object):
             "toolchanger": bool(self._settings.get(["toolchanger"])),
             "z_axis_inverted": bool(self._settings.get(["z_axis_inverted"])),
             "menu_structure": json.loads(self._settings.get(["menu_structure"])),
+            "applications_menu": json.loads(self._settings.get(["applications_menu"])),
         }
 
     @staticmethod
@@ -106,6 +121,7 @@ class OctoScreenSettings(object):
             z_axis_inverted=True,
             gcodes=dict(auto_bed_level="G29"),
             menu_structure=default_menu_structure,
+            applications_menu=default_applications_menu,
         )
 
     @staticmethod
