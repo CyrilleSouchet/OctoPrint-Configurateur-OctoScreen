@@ -20,7 +20,7 @@ class NotificationsStorage:
         payload = dict()
         payload['title'] = message['title']
         payload['text'] = message['text']
-        self._plugin_manager.send_plugin_message("zbolt_octoscreen", payload)
+        self._plugin_manager.send_plugin_message("configurator_octoscreen", payload)
 
 
     def get_message_to_display(self):

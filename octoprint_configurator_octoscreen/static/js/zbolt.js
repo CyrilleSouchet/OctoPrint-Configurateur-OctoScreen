@@ -21,7 +21,7 @@ $(function () {
 
         // Handle Plugin Messages from Server
         self.onDataUpdaterPluginMessage = function (plugin, data) {
-            if (plugin !== "zbolt_octoscreen") {
+            if (plugin !== "configurator_octoscreen") {
                 return;
             }
 

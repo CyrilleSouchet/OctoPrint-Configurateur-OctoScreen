@@ -2,13 +2,13 @@
 
     
     <ul class="nav nav-pills">
-        <li class="active"><a href="#zbolt_octoscreen_general" data-toggle="tab">{{ _('General') }}</a></li>
-        <li><a href="#zbolt_octoscreen_menu_structure" data-toggle="tab">{{ _('Menu Structure') }}</a></li>
+        <li class="active"><a href="#configurator_octoscreen_general" data-toggle="tab">{{ _('General') }}</a></li>
+        <li><a href="#configurator_octoscreen_menu_structure" data-toggle="tab">{{ _('Menu Structure') }}</a></li>
     </ul>
 
 
     <div class="tab-content">
-        <div id="zbolt_octoscreen_general" class="tab-pane active">
+        <div id="configurator_octoscreen_general" class="tab-pane active">
             <fieldset>
                 <div class="alert">
                     <p>
@@ -22,7 +22,7 @@
                     <label class="control-label">{{ _('Auto Bed Leveling (Leave empty to hide button):') }}</label>
 
                     <div class="controls">
-                        <textarea rows="2" class="block" data-bind="value: settings.plugins.zbolt_octoscreen.gcodes.auto_bed_level"></textarea>
+                        <textarea rows="2" class="block" data-bind="value: settings.plugins.configurator_octoscreen.gcodes.auto_bed_level"></textarea>
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                     <label class="control-label">{{ _('Filament in length:') }}</label>
 
                     <div class="controls">
-                        <input type="number" step="any" class="input-mini text-right" data-bind="value: settings.plugins.zbolt_octoscreen.filament_in_length" />
+                        <input type="number" step="any" class="input-mini text-right" data-bind="value: settings.plugins.configurator_octoscreen.filament_in_length" />
                         <span class="add-on">mm</span>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="control-group">
                     <label class="control-label">{{ _('Filament out length:') }}</label>
                     <div class="controls">
-                        <input type="number" step="any" class="input-mini text-right" data-bind="value: settings.plugins.zbolt_octoscreen.filament_out_length" />
+                        <input type="number" step="any" class="input-mini text-right" data-bind="value: settings.plugins.configurator_octoscreen.filament_out_length" />
                         <span class="add-on">mm</span>
                     </div>
                 </div>
@@ -50,26 +50,26 @@
                 <div class="control-group">
                     <label class="control-label">{{ _('Invert Z axis buttons on move screen:') }}</label>
                     <div class="controls">
-                        <input type="checkbox" data-bind="checked: settings.plugins.zbolt_octoscreen.z_axis_inverted" />
+                        <input type="checkbox" data-bind="checked: settings.plugins.configurator_octoscreen.z_axis_inverted" />
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label">{{ _('Tool Changer:') }}</label>
                     <div class="controls">
-                        <input type="checkbox" data-bind="checked: settings.plugins.zbolt_octoscreen.toolchanger" />
+                        <input type="checkbox" data-bind="checked: settings.plugins.configurator_octoscreen.toolchanger" />
                     </div>
                 </div>
             </fieldset>
         </div>
-        <div id="zbolt_octoscreen_menu_structure" class="tab-pane">
+        <div id="configurator_octoscreen_menu_structure" class="tab-pane">
             <fieldset>
-                <textarea rows="25" class="block" data-bind="value: settings.plugins.zbolt_octoscreen.menu_structure"></textarea>
+                <textarea rows="25" class="block" data-bind="value: settings.plugins.configurator_octoscreen.menu_structure"></textarea>
             </fieldset>
 
             <div>
                 <div><small><a href="#" class="muted" data-bind="toggleContent: { class: 'fa-caret-right fa-caret-down', parent: '.form-horizontal', container: '.hide' }"><i class="fa fa-caret-right"></i> {{ _('Default value') }}</a></small></div>
                 <div class="hide">
-                    <code style="white-space: pre-wrap; display: block;">{{ plugin_zbolt_octoscreen_default_menu_structure | safe }}</code>
+                    <code style="white-space: pre-wrap; display: block;">{{ plugin_configurator_octoscreen_default_menu_structure | safe }}</code>
                 </div>
             </div>
         </div>

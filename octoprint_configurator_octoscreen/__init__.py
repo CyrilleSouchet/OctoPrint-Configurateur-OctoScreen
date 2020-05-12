@@ -64,7 +64,7 @@ class OctoScreenPlugin(octoprint.plugin.SettingsPlugin,
     ##~~ Softwareupdate hook
     def get_update_information(self):
         return dict(
-        zbolt_octoscreen=dict(
+        configurator_octoscreen=dict(
             displayName = "Configurateur OctoScreen",
             displayVersion = self._plugin_version,
 
