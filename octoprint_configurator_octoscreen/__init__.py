@@ -73,7 +73,7 @@ class OctoScreenPlugin(octoprint.plugin.SettingsPlugin,
             repo="OctoPrint-Configurateur-OctoScreen",
             current=self._plugin_version,
 
-            pip="https://github.com/CyrilleSouchet/OctoPrint-Configurateur-OctoScreen/archive/{target_version}.zip"
+            pip="https://github.com/CyrilleSouchet/OctoPrint-Configurateur-OctoScreen/{target_version}.zip"
             )
         )
 
