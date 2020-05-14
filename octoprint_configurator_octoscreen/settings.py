@@ -40,9 +40,9 @@ default_menu_structure = """[
                 "panel": "control"
             },
             {
-                "name": "ToolChanger",
-                "icon": "toolchanger",
-                "panel": "toolchanger"
+                "name": "Custom Action",
+                "icon": "add-on",
+                "panel": "customtool"
             }
         ]
     },
