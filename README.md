@@ -9,4 +9,4 @@ Plugin Provides settings management for [OctoScreen](https://github.com/CyrilleS
 Install manually via the bundled [Plugin Manager](https://plugins.octoprint.org/help/installation/)
 using this URL:
 
-    https://github.com/CyrilleSouchet/OctoPrint-Z-Bolt-OctoScreen/master.zip
+    https://github.com/CyrilleSouchet/OctoPrint-Configurateur-OctoScreen
